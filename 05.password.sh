@@ -6,4 +6,4 @@ read -s USERNAME
  
 echo "BRO please enter your password"
  read -s PASSWORD
-  echo "Password entered is: $PASSWORD
+  echo "Password entered is: $PASSWORD"
