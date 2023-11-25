@@ -8,7 +8,7 @@
     exit 1
 fi
 
-yum install mssqlll -y
+yum install mysql -y
 
 if [ $? -ne 0 ]
 then 
@@ -18,7 +18,7 @@ else
     echo "Installation of mysql is success"
 fi
 
-yum install postfixx -y
+yum install postfix -y
 
 if [ $? -ne 0 ]
 then 
