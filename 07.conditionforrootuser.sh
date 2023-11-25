@@ -19,24 +19,24 @@
     exit 1
 fi
 
-yum install my sql -y
+yum install mysql -y
 VALIDATE $? "Installing MYSQL"
 
-if [ $? -ne 0 ]
-then 
-    echo "Installation of mysql is error"
-    exit 1
-else
-    echo "Installation of mysql is success"
-fi
+# if [ $? -ne 0 ]
+# then 
+#     echo "Installation of mysql is error"
+#     exit 1
+# else
+#     echo "Installation of mysql is success"
+# fi
 
 yum install postfix -y
 VALIDATE $? "Installing POSTFIX"
 
-if [ $? -ne 0 ]
-then 
-    echo "Installation of postfix is error"
-    exit 1
-else
-    echo "Installation of postfix is success"
-fi
+# if [ $? -ne 0 ]
+# then 
+#     echo "Installation of postfix is error"
+#     exit 1
+# else
+#     echo "Installation of postfix is success"
+# fi
