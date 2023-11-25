@@ -7,6 +7,7 @@ VALIDATE(){
         exit 1
     else
         echo "Installation.....SUCCESS"
+        fi
 
 }
 
