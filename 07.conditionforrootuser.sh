@@ -20,7 +20,13 @@
 fi
 
 yum install mysql -y
+
 VALIDATE $? "Installing MYSQL"
+
+yum install postfix -y
+
+VALIDATE $? "Installing POSTFIX"
+
 
 # if [ $? -ne 0 ]
 # then 
@@ -30,8 +36,6 @@ VALIDATE $? "Installing MYSQL"
 #     echo "Installation of mysql is success"
 # fi
 
-yum install postfix -y
-VALIDATE $? "Installing POSTFIX"
 
 # if [ $? -ne 0 ]
 # then 
