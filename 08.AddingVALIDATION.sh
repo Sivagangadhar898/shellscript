@@ -4,6 +4,11 @@ VALIDATE(){
     R="\e[31m"
     N="\e[0m"
 
+    for i in $@
+do 
+    yum install $i -y
+done
+
     if [ $1 -ne 0 ]
     then
         echo -e "$2 ... $G Installation.....FAILURE $N"
