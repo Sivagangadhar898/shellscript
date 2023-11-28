@@ -1,8 +1,8 @@
 USERID=$(id -u)
 VALIDATE(){
-    G=\e[32m
-    R=\e[31m
-    N=\e[0m
+    G="\e[32m"
+    R="\e[31m"
+    N="\e[0m"
 
     if [ $1 -ne 0 ]
     then
