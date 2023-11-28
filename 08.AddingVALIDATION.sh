@@ -4,7 +4,7 @@ VALIDATE(){
     
     SCRIPT_NAME=$0
     DATE=$(date +%F)
-    LOGFILE=/tmp/$SCRIPT_Name-$DATE.log
+    
     if [ $1 -ne 0 ]
     then
         echo "Installation.....FAILURE"
@@ -20,10 +20,10 @@ USERID=$(id -u)
     echo "ERROR:: Please run this script with root access"
     exit 1
 fi
-yum install mysql -y &>>$LOGFILE
+yum install mysql -y
 
 VALIDATE $? 
-yum install postfix -y &>>$LOGFILE
+yum install postfix -y 
 
 VALIDATE $? 
 
