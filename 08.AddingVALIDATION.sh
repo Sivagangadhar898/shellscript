@@ -1,3 +1,4 @@
+#!/bin/bash
 USERID=$(id -u)
 VALIDATE(){
     
@@ -21,8 +22,8 @@ VALIDATE(){
 fi
 yum install mysql -y
 
-VALIDATE $? &>>$LOGFILES
+VALIDATE $? &>>$LOGFILE
 yum install postfix -y
 
-VALIDATE $? &>>$LOGFILES
+VALIDATE $? &>>$LOGFILE
 
