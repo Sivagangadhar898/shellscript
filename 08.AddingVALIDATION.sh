@@ -1,6 +1,6 @@
 USERID=$(id -u)
 VALIDATE(){
-
+    DATE=$(date)
     if [ $1 -ne 0 ]
     then
         echo "Installation.....FAILURE"
