@@ -1,5 +1,5 @@
 #!/bin/bash
-USERID=$(id -u)
+
 VALIDATE(){
     
     SCRIPT_NAME=$0
@@ -14,16 +14,16 @@ VALIDATE(){
         fi
 
 }
-
+USERID=$(id -u)
  if [ $USERID -ne 0 ]
  then
     echo "ERROR:: Please run this script with root access"
     exit 1
 fi
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 
-VALIDATE $? &>>$LOGFILE
-yum install postfix -y
+VALIDATE $? 
+yum install postfix -y &>>$LOGFILE
 
-VALIDATE $? &>>$LOGFILE
+VALIDATE $? 
 
