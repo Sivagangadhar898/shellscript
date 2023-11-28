@@ -21,8 +21,8 @@ VALIDATE(){
 fi
 yum install mysql -y
 
-VALIDATE $? "Installing MYSQL" &>>LOGFILEs
+VALIDATE $? &>>$LOGFILES
 yum install postfix -y
 
-VALIDATE $? "Installing postfix"
+VALIDATE $? &>>$LOGFILES
 
