@@ -1,29 +1,29 @@
-#!/bin/bash
-
+USERID=$(id -u)
 VALIDATE(){
-    
-    SCRIPT_NAME=$0
-    DATE=$(date +%F)
-    LOGFILE=/tmp/$SCRIPT_Name-$DATE.log
+    G=\e[32m
+    R=\e[31m
+    N=\e[0m
+
     if [ $1 -ne 0 ]
     then
-        echo "Installation.....FAILURE"
+        echo -e "$2 ... $R Installation.....FAILURE $N"
         exit 1
     else
-        echo "Installation.....SUCCESS"
+        echo -e "$2 ... $G Installation.....SUCCESS $N"
         fi
 
 }
-USERID=$(id -u)
+
  if [ $USERID -ne 0 ]
  then
     echo "ERROR:: Please run this script with root access"
     exit 1
 fi
-yum install mysql -y &>>$LOGFILE
+yum install mysql -y
 
-VALIDATE $? 
-yum install postfix -y &>>$LOGFILE
+VALIDATE $? "Installing MYSQL"
 
-VALIDATE $? 
+yum install postfix -y
+
+VALIDATE $? "Installing postfix"
 
