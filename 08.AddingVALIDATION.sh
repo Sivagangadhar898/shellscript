@@ -1,6 +1,9 @@
 USERID=$(id -u)
 VALIDATE(){
-    DATE=$(date)
+    
+    SCRIPT_NAME=$0
+    DATE=$(date +%F)
+    LOGFILE=/tmp/$SCRIPT_Name-$DATE.log
     if [ $1 -ne 0 ]
     then
         echo "Installation.....FAILURE"
@@ -18,8 +21,7 @@ VALIDATE(){
 fi
 yum install mysql -y
 
-VALIDATE $? "Installing MYSQL"
-
+VALIDATE $? "Installing MYSQL" &>>LOGFILEs
 yum install postfix -y
 
 VALIDATE $? "Installing postfix"
