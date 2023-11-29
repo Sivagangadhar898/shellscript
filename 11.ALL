@@ -1,0 +1,40 @@
+#!/bin/bash
+
+DATE=$(date +%F)
+
+#Saving log files..........
+ LOGSDIR=/c/devops/repo/shellscript-logs
+ #/home/centos/shellscript-logs/script-name-date.log
+ LOGFILE=$LOGSDIR/$0-$DATE-log
+ SCRIPT_NAME=$0
+
+ #COLORS......................
+ R="\e[31m"
+ G="\e[32m"
+ N="\e[0m"
+
+#Condtions...................
+ USERID=$(id -U)
+    if [ $USERID -  ne 0 ];
+ then 
+    echo -e "$R ERORR:: please run this script with root accesS $N"
+  else
+    exit 1
+    fi     
+#Validation.........................
+ VALIDATE(){
+    if [ $? -ne 0 ];
+ then
+    echo -e "Installing $2 ...$R FAILURE $N"
+    exit 1
+ else
+    echo -e "Installing $2 ...$G SUCCESS $N"
+   fi        
+    
+ }
+#Loops.......................
+ for i in $@
+do 
+    yum install $i -y
+done
+    
