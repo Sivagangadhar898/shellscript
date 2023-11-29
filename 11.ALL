@@ -35,6 +35,14 @@ DATE=$(date +%F)
 #Loops
  for i in $@
 do 
-    yum install $i -y
+    yum list installed $i &>>$LOGFILE
+    if [ $? -ne 0 ]
+then
+    echo "$i is not installed, let's install it"
+    yum install $i -y &>>$LOGFILE
+    VALIDATE $? "$i"
+else
+    echo -e "$i is already installed $N"  
+fi      
 done
     
