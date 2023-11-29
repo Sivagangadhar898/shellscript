@@ -8,20 +8,20 @@ DATE=$(date +%F)
  LOGFILE=$LOGSDIR/$0-$DATE-log
  SCRIPT_NAME=$0
 
- #COLORS......................
+#COLORS
  R="\e[31m"
  G="\e[32m"
  N="\e[0m"
 
 #Condtions...................
- USERID=$(id -U)
-    if [ $USERID -  ne 0 ];
+ USERID=$(id -u)
+    if [ $USERID - ne 0 ];
  then 
     echo -e "$R ERORR:: please run this script with root accesS $N"
   else
     exit 1
     fi     
-#Validation.........................
+#Validation
  VALIDATE(){
     if [ $? -ne 0 ];
  then
@@ -32,7 +32,7 @@ DATE=$(date +%F)
    fi        
     
  }
-#Loops.......................
+#Loops
  for i in $@
 do 
     yum install $i -y
