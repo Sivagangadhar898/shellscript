@@ -17,7 +17,7 @@ DATE=$(date +%F)
  USERID=$(id -u)
     if [ $USERID -ne 0 ];
  then 
-    echo -e "$R ERORR:: please run this script with root accesS $N"
+    echo -e "$R ERORR:: please run this script with root access $N"
   else
     exit 1
     fi     
