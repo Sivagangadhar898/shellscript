@@ -42,7 +42,7 @@ then
     yum install $i -y &>>$LOGFILE
     VALIDATE $? "$i"
 else
-    echo -e "$i is already installed $N"  
+    echo -e "$R $i is already installed $N"  
 fi      
 done
     
